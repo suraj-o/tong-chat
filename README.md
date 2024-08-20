@@ -78,18 +78,18 @@ npm install
 
 **edit docker-compose.yml file**
 change all <your private ip> with your local system private ip
-<img src="https://github.com/suraj-o/readme/assets/kafka.jpg" alt="Project Banner">
+<img src="https://github.com/suraj-o/tong-chat/tree/main/client/assets/kafka.png" alt="Project Banner">
 
 
 **edit your file in /src/services/kafka-admin.ts**
 change <your private ip> with your local system private ip
-<img src="https://github.com/suraj-o/readme/assets/kafka-admin.jpg" alt="Project Banner">
+<img src="https://github.com/suraj-o/tong-chat/tree/main/client/assets/kakfka-admin.png" alt="Project Banner">
 
 
 **edit your file in /src/services/kafka.ts**
 change <your private ip> with your local system private ip
 
-<img src="https://github.com/suraj-o/readme/assets/kafka-pro.jpg" alt="Project Banner">
+<img src="https://github.com/suraj-o/tong-chat/tree/main/client/assets/kafka-pro.png" alt="Project Banner">
 
 **start docker-compose.yml file**
 
