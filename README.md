@@ -58,8 +58,8 @@ Follow these steps to set up the project locally on your machine.
 **Cloning the Repository**
 
 ```bash or powershell
-git clone https://github.com/suraj-o/tong-chats.git
-cd tong-chats
+git clone https://github.com/suraj-o/tong-chat.git
+cd tong-chat
 ```
 
 **First of all start server**
