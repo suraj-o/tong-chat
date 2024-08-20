@@ -70,66 +70,63 @@ cd server
 
 **Installation**
 
-Install the project dependencies using npm:
+
 
 ```bash
+---Install the project dependencies using npm:---
+
 npm install
 ```
 
-**edit docker-compose.yml file**
+**Edit docker-compose.yml file**
 change all <your private ip> with your local system private ip
 <img src="https://github.com/suraj-o/tong-chat/blob/main/client/assets/kafka.png" alt="Project Banner">
 
 
-**edit your file in /src/services/kafka-admin.ts**
+**Edit your file in /src/services/kafka-admin.ts**
 change <your private ip> with your local system private ip
 <img src="https://github.com/suraj-o/tong-chat/blob/main/client/assets/kakfka-admin.png" alt="Project Banner">
 
 
-**edit your file in /src/services/kafka.ts**
+**Edit your file in /src/services/kafka.ts**
 change <your private ip> with your local system private ip
 
 <img src="https://github.com/suraj-o/tong-chat/blob/main/client/assets/kafka-pro.png" alt="Project Banner">
 
-**start docker-compose.yml file**
-
+**Start docker-compose.yml file**
+```bash
 --start your local docker demon first--
-
 --after start run following command below--
 
-```bash
 docker compose up
 
 ```
 
 
-**build your dist folder**
-
----run following command---
+**Build your dist folder**
 
 ```bash
+---run following command---
+
 npm run build 
 
 ```
 
-**create your kafka topics**
-
----run following command---
-
+**Create your kafka topics**
 ```bash
+---run following command---
 
 node dist/services/kafka-admin.js
 
 ```
 
-**run server**
+**Run server**
 ```bash
 npm start
 ```
 **Go to client folder**
 ```bash
 ---run following command---
-
 cd ..
 cd client
 npm run dev
