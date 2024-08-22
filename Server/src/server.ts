@@ -36,7 +36,7 @@ async function initServer(){
     config({path:"./.env"});
     app.use(cookieParser());
     app.use(cors({
-        origin:"http://localhost:3000",
+        origin:process.env.CLIENT_URL as string,
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials:true,
     }));

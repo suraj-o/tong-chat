@@ -1,9 +1,4 @@
-import { Kafka } from "kafkajs";
-
-const kafka = new Kafka({
-    brokers:["<your private ip>:9092"],
-    clientId:"ting-tong"
-})
+import { kafka } from "./kafka-client";
 
 async function admin(){
     console.log("admin connecting....");

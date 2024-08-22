@@ -1,9 +1,6 @@
-import {Kafka, Producer}from "kafkajs"
+import {Producer}from "kafkajs"
 import {Messages} from "../models/messages"
-const kafka = new Kafka({
-    brokers:["<your private ip>:9092"],
-    clientId:"ting-tong"
-})
+import { kafka } from "./kafka-client"
 
 // producers
 interface MessageType{
