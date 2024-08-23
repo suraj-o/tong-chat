@@ -28,12 +28,12 @@ async function initServer(){
     socketIo.io.attach(server)
     
     // database
-    connectDb()
+    connectDb(process.env.DB_URL as string)
     // binding and configuring middleware with server 
     app.use(morgan("dev"));
     app.use(express.urlencoded({extended:false}))
     app.use(express.json());
-    config({path:"./.env"});
+    config({path:"./.env.local"});
     app.use(cookieParser());
     app.use(cors({
         origin:process.env.CLIENT_URL as string,

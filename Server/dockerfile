@@ -37,4 +37,7 @@ COPY --from=builder /home/app/package*.json .
 COPY --from=builder /home/app/node_modules node_modules
 COPY --from=builder /home/app/dist dist/
 
+#RUNNING COMMAND FOR CREATING TOPICS 
+# RUN node dist/services/kafka-admin.js
+
 CMD [ "npm","start" ]
