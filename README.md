@@ -47,7 +47,7 @@
 
 👉 **Kafka**: Using kafka for inserting and qurrieng  messages in DB which is helping DB for go down, crash and save data while server will go down or crash    
 
-## <a name="quick-start">🤸 Quick Start</a>
+## <a name="quick-start">🤸 Quick Start Locally</a>
 
 Follow these steps to set up the project locally on your machine.
 
