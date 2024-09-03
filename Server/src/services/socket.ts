@@ -40,38 +40,22 @@ export class SocketIO{
 
             socket.on("NEW_MESSAGE",async(data)=>{
                 await pub.publish("messages",JSON.stringify(data))
-            })    
+            })   
 
+             sub.on("message",async(channel,messages)=>{
+                if(channel==="messages"){
+                    const newMessage=JSON.parse(messages) as {chatId:string, message:string, to:string, from:string, date:number};
 
-            socket.on("NEW_MESSAGE",async(newMessage:MessageType)=>{
-                await produceMessage({
-                    chatId:newMessage.chatId,
-                    from:newMessage.from,
-                    to:newMessage.to,
-                    message:newMessage.message
-                })
-
-                const getRecvier=this.userIdAndSocketIdTable.get(newMessage.to)
-                io.to([socket.id,getRecvier]).emit("NEW_MESSAGE",newMessage)
-            })
-
-
-            // facing issue from redis
-
-            //  sub.on("message",async(channel,messages)=>{
-            //     if(channel==="messages"){
-            //         const newMessage=JSON.parse(messages) as {chatId:string, message:string, to:string, from:string, date:number};
-
-            //         await produceMessage({
-            //             chatId:newMessage.chatId,
-            //             from:newMessage.from,
-            //             to:newMessage.to,
-            //             message:newMessage.message
-            //         })
-            //         const getRecvier=this.userIdAndSocketIdTable.get(newMessage.to);
-            //         io.to([socket.id,getRecvier]).emit("NEW_MESSAGE",newMessage);
-            //     }
-            //  })
+                    await produceMessage({
+                        chatId:newMessage.chatId,
+                        from:newMessage.from,
+                        to:newMessage.to,
+                        message:newMessage.message
+                    })
+                    const getRecvier=this.userIdAndSocketIdTable.get(newMessage.to);
+                    io.to([socket.id,getRecvier]).emit("NEW_MESSAGE",newMessage);
+                }
+             })
                 
 
             // handling calling systems
